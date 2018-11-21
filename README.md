@@ -8,3 +8,4 @@ Initial challenge - go through a Udemy course on C++ for around 15 minutes daily
 
 13th - 15th Nov, 2018 - Set up IDE Clion. Start over again the Udemy course on C++ I did not finish previously. Start with hello world and variables.
 15th Nov, 2018 - variable types. Arithmetic operators are the same as other languages.
+21st Nov - if statement, the same as javascript.

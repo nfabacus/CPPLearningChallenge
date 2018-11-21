@@ -3,6 +3,16 @@
 using namespace std;
 
 int main () {
+    int value1 = 15;
+    int value2 = 10;
+
+    if(value1 > value2 ) {
+        cout << value1 << " is bigger than " << value2 << endl;
+    } else {
+        cout << value2 << " is bigger than " << value1 << endl;
+    }
+
+
     cout << "Hello world!" << endl; // endl means end of line (goes to next line)
     int A = 5;
     cout << A << endl;
