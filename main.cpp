@@ -6,11 +6,17 @@ int main () {
     int value1 = 15;
     int value2 = 10;
 
-    if(value1 > value2 ) {
-        cout << value1 << " is bigger than " << value2 << endl;
+    // if conditions
+    int value10= 10;
+    int value20 = 20;
+    if(value10 < value20) {
+        cout << "value10 is smaller than value20!" << endl;
     } else {
-        cout << value2 << " is bigger than " << value1 << endl;
+        cout << "value10 is bigger than value20!" << endl;
     }
+
+    string message = (value10 < value20) ? "ternary: value10 is smaller than value20!" :  "ternary: value10 is bigger than value20!";
+    cout << message << endl;
 
 
     cout << "Hello world!" << endl; // endl means end of line (goes to next line)
@@ -53,5 +59,36 @@ int main () {
     cout << (firstInt != secondInt && firstInt > secondInt) << endl;
     cout << (firstInt == secondInt || firstInt > secondInt) << endl;
     cout << (firstInt == secondInt || firstInt < secondInt) << endl;
+
+    // Switch
+    int x = 7;
+    switch(x) {
+        case 5:
+            cout << "x value is 5!" << endl;
+            break;
+        case 7:
+            cout <<  "x value is 7!" << endl;
+            break;
+        default:
+            cout << "x value is whatever number!!" << endl;
+    }
+
+    // arrays
+    int myArr[3];
+    myArr[0] = 10;
+    myArr[1] = 50;
+    myArr[2] = 256;
+    // DO NOT ASSIGN MORE THAN THE SIZE OF THE ARRAY SET e.g. 3 here. array[2] is the biggest one.
+    cout << "array[0] = " << myArr[0] << "address: " << &myArr[0] <<endl;
+    cout << "array[1] = " << myArr[1] << "address: " << &myArr[1] <<endl;
+    cout << "array[2] = " << myArr[2] << "address: " << &myArr[2] <<endl;
+    cout << "array = " << myArr <<endl;
+
+    // Multidimensional array
+    int myMArr[3][4] = {0}; //can set all the numbers default 0.
+    myMArr[2][4] = 77;
+    cout << myMArr[0][0] << endl;
+    cout << myMArr[2][4] << endl;
+
     return 0;
 }
