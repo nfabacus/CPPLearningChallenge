@@ -74,7 +74,7 @@ int main () {
     }
 
     // arrays
-    int myArr[3];
+    int myArr[3]; // setting the size of the array
     myArr[0] = 10;
     myArr[1] = 50;
     myArr[2] = 256;
@@ -93,6 +93,31 @@ int main () {
     for (int i = 0; i < 10; i++) {
         cout << "i is " << i << endl;
     }
+
+
+    const int sizeOfArray = 10;
+    int i = 0;
+    int array[sizeOfArray];
+
+    while (i < sizeOfArray ) {
+        array[i] = 10 * i;
+        cout << array[i++] << endl;
+    }
+
+    int const originalNr = 1234; // 4 digits
+    int nr = originalNr;
+    int nrOfDigits = 1;
+
+    cout << 1234/10 << endl;
+    cout << 123/10 << endl;
+    cout << 12/10 << endl;
+    cout << 1/10 << endl;
+
+    while(nr/=10) {
+        nrOfDigits +=1;
+    }
+
+    cout << originalNr << " has " << nrOfDigits << " digits";
 
     return 0;
 }
