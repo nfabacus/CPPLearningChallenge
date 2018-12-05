@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int globalVariable;
+
 int main () {
     int value1 = 15;
     int value2 = 10;
@@ -117,7 +119,23 @@ int main () {
         nrOfDigits +=1;
     }
 
-    cout << originalNr << " has " << nrOfDigits << " digits";
+    cout << originalNr << " has " << nrOfDigits << " digits" << endl;
+
+    int localVariable;
+    cout << "Value of globalVariable: " << globalVariable << endl;
+    cout << "Value of localVariable: " << localVariable << endl;
+
+    int inputNr, result = 0;
+    int n = 0;
+    for (; n < 3; n++) {
+        cout << "Enter " << (n+1) << " number" << endl;
+        cin >> inputNr;
+        result += inputNr;
+    }
+
+    cout << result << endl;
+    cout << "We added " << n << " numbers" << endl;
+
 
     return 0;
 }
