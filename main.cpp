@@ -4,7 +4,18 @@ using namespace std;
 
 int globalVariable;
 
+void welcome(); //declaration of function
+bool isNumber(string);  // You don't need to specify parameter name here.
+
 int main () {
+    welcome();
+    int isThisNumber;
+    isThisNumber = isNumber("54");
+    isThisNumber = isNumber("004");
+    cout << isThisNumber << endl;
+    isNumber("anc");
+    isNumber("123a");
+
     int value1 = 15;
     int value2 = 10;
 
@@ -138,4 +149,19 @@ int main () {
 
 
     return 0;
+}
+
+void welcome() {
+    cout << "Hello, welcome to my programme!" << endl;
+}
+
+bool isNumber(string temp) {
+    for (int i = 0; i < temp.length(); i++) {
+        if(!(temp[i] >=48 && temp[i] <= 57)) {
+            cout << "This is NOT a number!" << endl;
+            return false;
+        }
+    }
+    cout << "This is a number!" << endl;
+    return true;
 }
