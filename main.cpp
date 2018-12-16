@@ -1,4 +1,5 @@
 #include <iostream>
+# define PI 3.14
 
 using namespace std;
 
@@ -6,8 +7,32 @@ int globalVariable;
 
 void welcome(); //declaration of function
 bool isNumber(string);  // You don't need to specify parameter name here.
+int power(int, int);
+double power (double, int);  //overloading function
+void initMenu();
+void menuDecision(int);
+double areaCircle(double);
+double areaSquare(double);
+double areaRectangle(double, double);
+double areaTriangle(double, double);
 
 int main () {
+    int choice;
+    char cont;
+    do {
+//        system("clear"); // clear screen
+        initMenu();
+        cin >> choice;
+        menuDecision(choice);
+
+        cout << "Do you want to continue with the calculations? (Y/N)" << endl;
+        cin >> cont;
+    } while(cont == 'y' || cont == 'Y');
+
+
+
+    cout << "power >>> " << power(3, 4) << endl;
+    cout << "power 2 >>> " << power(2.5, 2) << endl;
     welcome();
     int isThisNumber;
     isThisNumber = isNumber("54");
@@ -164,4 +189,80 @@ bool isNumber(string temp) {
     }
     cout << "This is a number!" << endl;
     return true;
+}
+
+int power(int b, int e) {
+    int tmp = b;
+    while(e > 1) {
+        b = b * tmp;
+        e--;
+    }
+    return b;
+}
+
+double power(double b, int e) {
+    double tmp = b;
+    while(e > 1) {
+        b = b * tmp;
+        e--;
+    }
+    return b;
+}
+
+void initMenu() {
+    cout << "Enter option:" << endl;
+    cout << "1. Circle" << endl;
+    cout << "2. Square" << endl;
+    cout << "3. Rectangle" << endl;
+    cout << "4. Triangle" << endl;
+}
+
+void menuDecision(int choice) {
+    double r, a, b, h;
+    switch(choice) {
+        case 1:
+            cout << "Ener the radius: " << endl;
+            cin >> r;
+            areaCircle(r);
+            break;
+        case 2:
+            cout << "Ener the side of a square: " << endl;
+            cin >> a;
+            areaSquare(a);
+            break;
+        case 3:
+            cout << "Ener the width and height of a rectangle: " << endl;
+            cin >> a >> b;
+            areaRectangle(a, b);
+            break;
+        case 4:
+            cout << "Ener the height and base of a triangle: " << endl;
+            cin >> a >> h;
+            areaTriangle(a, h);
+            break;
+        default:
+            cout << "You did not choose any of the options from above" << endl;
+    }
+}
+
+double areaCircle(double r) {
+    double result = PI * r * r;
+    cout << "The area of the circle with the radius " << r << " is " << result << endl;
+    return result;
+}
+
+double areaSquare(double a) {
+    double result = a * a;
+    cout << "The area of the square with the side " << a << " is " << result << endl;
+    return result;
+}
+double areaRectangle(double a, double b) {
+    double result = a * b;
+    cout << "The area of the rectangle with the first side " << a << ", second side " << b << ", is " << result << endl;
+    return result;
+}
+double areaTriangle(double a, double h) {
+    double result = (a * h)/2;
+    cout << "The area of the triangle with the base(" << a << ") and the height(" << h << ") is " << result << endl;
+    return result;
 }
