@@ -15,16 +15,17 @@ double areaCircle(double);
 double areaSquare(double);
 double areaRectangle(double, double);
 double areaTriangle(double, double);
+void clearScreen();
 
 int main () {
     int choice;
     char cont;
     do {
-//        system("clear"); // clear screen
+//      system("clear"); // clear screen
+        clearScreen(); // clear screen
         initMenu();
         cin >> choice;
         menuDecision(choice);
-
         cout << "Do you want to continue with the calculations? (Y/N)" << endl;
         cin >> cont;
     } while(cont == 'y' || cont == 'Y');
@@ -265,4 +266,11 @@ double areaTriangle(double a, double h) {
     double result = (a * h)/2;
     cout << "The area of the triangle with the base(" << a << ") and the height(" << h << ") is " << result << endl;
     return result;
+}
+
+void clearScreen()
+{
+    int n;
+    for (n = 0; n < 10; n++)
+        printf( "\n\n\n\n\n\n\n\n\n\n" );
 }
