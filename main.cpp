@@ -24,10 +24,24 @@ int main () {
 //      system("clear"); // clear screen
         clearScreen(); // clear screen
         initMenu();
-        cin >> choice;
+
+        while(!(cin >> choice)) {  // while the input is a wrong type.
+            // need to clear the input if the input is a wrong type
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            clearScreen();
+            initMenu();
+            cout << "You have just typed the wrong data to the input." << endl;
+        }
+
+
         menuDecision(choice);
-        cout << "Do you want to continue with the calculations? (Y/N)" << endl;
-        cin >> cont;
+
+        do {
+            cout << "Do you want to continue with the calculations? (Y/N)" << endl;
+            cin >> cont; //if you type more than 1 character (in a temporary array in buffer, it will repeat..
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        } while (cont !='y' && cont !='Y' && cont !='n' && cont !='n');
     } while(cont == 'y' || cont == 'Y');
 
 
