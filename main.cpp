@@ -254,7 +254,7 @@ void menuDecision(int choice) {
             cout << "Ener the height and base of a triangle: " << endl;
             cin >> a >> h;
             areaTriangle(a, h);
-            break;
+            break;a
         default:
             cout << "You did not choose any of the options from above" << endl;
     }
